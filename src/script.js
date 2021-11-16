@@ -1,4 +1,9 @@
-const h2 = document.createElement('h2')
-h2.textContent = "Does it work?"
-const h1 = document.querySelector('h1')
-h1.append(h2)
+const gameTitle = document.getElementById("game_title")
+
+fetch('https://www.mmobomb.com/api1/games')
+.then(res => res.json())
+.then(renderSomething)
+
+function renderSomething (data) {
+    gameTitle.textContent = data.title
+}
