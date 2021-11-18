@@ -19,7 +19,7 @@ const menu = document.querySelector("#myMenu")
 
 const filterbutton = document.querySelector("#filters")
 const filtersList = document.querySelector(".filtersList")
-
+const filterReset = document.querySelector("#reset")
 
 document.addEventListener("DOMContentLoaded", fetchData)
 
@@ -146,13 +146,15 @@ function handleSubmit(e) {
 
 }
 //Filter Functionality
-console.log(filtersList.children)
+// console.log(filtersList.children)
 filterbutton.addEventListener(`click`, () => {
     filtersList.toggleAttribute("hidden")
+    filterReset.toggleAttribute("hidden")
 })
+    //All Filters Button functionality
 filtersList.childNodes.forEach((filter) => {
  filter.addEventListener(`click`, () => {
-     fetch(BASE_URL+`?category=${filter.id}`, {
+     fetch(BASE_URL+`?category=${filter.id}&sort-by=alphabetical`, {
         headers: {
             'x-rapidapi-host': 'mmo-games.p.rapidapi.com',
             'x-rapidapi-key': apiKey
@@ -187,6 +189,40 @@ filtersList.childNodes.forEach((filter) => {
      })
  })
 })
+    //Reset button
+filterReset.addEventListener("click", () => {
+    menu.replaceChildren()
+    fetch(BASE_URL+'?sort-by=alphabetical', {
+        headers: {
+            'x-rapidapi-host': 'mmo-games.p.rapidapi.com',
+            'x-rapidapi-key': apiKey 
+    }})
+    .then(resp => resp.json())
+    .then(data => {
+        data.forEach((game) => {
+            const li = document.createElement("li")
+            li.innerHTML = `<a href="#">${game.title}</a>`
+            li.className = "game"
+                    li.id = game.title
+            li.addEventListener(`click`, (e) => {
+                e.preventDefault()
+                gameTitle.textContent = game.title
+                gameImg.src = game.thumbnail
+                     gameImg.alt = game.title
+                     //Makes the image clickable and opens a new tab to the game page
+                     gameImg.addEventListener("click", () => openImageLink(game))
+                gameDesc.textContent = game.short_description
+                gameGenre.textContent = "Genre: "+game.genre
+                gamePlatform.textContent = "Platform: "+game.platform
+                gameDeveloper.textContent = "Developer: "+game.developer
+                releaseDate.textContent = "Release Date: "+game.release_date
+                gameImg.dataset.url = game.game_url
+            })
+            menu.append(li)
+        })
+    })
+}
+)
 
 //Just having fun
 const adTisement = document.querySelector("#addy")
