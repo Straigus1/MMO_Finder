@@ -4,12 +4,28 @@
     <meta charset="UTF-8">
     <title>MMO Finder</title>
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="config.js"></script>
+    <script type='text/javascript' src='config.js'></script>
     <script defer type="text/javascript" src="src/script.js"></script>
   </head>
   <body>
     <div id="page_name_container">
        <h1 id="page_name">MMO Finder</h1>
+   </div>
+   <div class="filterSection">
+       <h3><a id="filters" href="#">Filters</a></h3>
+       <ul class = "filtersList" hidden>
+           <li id = "Card">Card Game</li>
+           <li id = "Fighting">Fighting</li>
+           <li id = "MMO">MMO</li>
+           <li id = "MMOFPS">MMOFPS</li>
+           <li id = "MMORPG">MMORPG</li>
+           <li id = "MOBA">MOBA</li>
+           <li id = "PVP">PVP</li>
+           <li id = "Shooter">Shooter</li>
+           <li id = "Social">Social</li>
+           <li id = "Sports">Sports</li>
+           <li id = "Strategy">Strategy</li>
+       </ul>
    </div>
     <form id="search_bar_form">
         <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
@@ -20,7 +36,7 @@
     <div id="game_info_container">
         <h2 id="game_title" class="titles">Title of Game Here</h2>
         <p id="game_description" class="descriptions">Game description Goes Here</p>
-        <img id="game_thumbnail" class="thumbnails" src="https://image.shutterstock.com/image-vector/gamepad-icon-trendy-modern-placeholder-260nw-1656207211.jpg" alt="Game Image Goes Here"/>
+        <img id="game_thumbnail" class="thumbnails" src=src/images/stockImage.png alt="Game Image Goes Here"/>
         <div class="game_excerpt">
             <div class="game_break_down">
                 <h3 id="game_genre">Genre Info Goes Here</h3>
@@ -31,7 +47,7 @@
         </div>
     </div>
     <div id="form_box">
-        <!-- <label for="form_box">Leave a comment:</label> -->
+        <label for="form_box">Leave a comment:</label>
         <ul id="user_review"></ui>
             <div id="review_box">
                 <form id="review_form" class="review_form">

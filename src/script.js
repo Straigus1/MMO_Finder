@@ -1,4 +1,5 @@
 const BASE_URL = "https://mmo-games.p.rapidapi.com/games"
+const apiKey = config.api_key
 
 const gameTitle = document.getElementById("game_title")
 const gameImg = document.querySelector("#game_thumbnail")
@@ -16,7 +17,8 @@ const searchBar = document.querySelector("#searchBar")
 const searchBarForm = document.querySelector("#search_bar_form")
 const menu = document.querySelector("#myMenu")
 
-const apiKey = config.api_key
+const filterbutton = document.querySelector("#filters")
+const filtersList = document.querySelector(".filtersList")
 
 
 document.addEventListener("DOMContentLoaded", fetchData)
@@ -36,27 +38,13 @@ fetch(BASE_URL+'?sort-by=alphabetical', {
     (renderSomething(gamesData))
 })
 }
-
+//Function that makes the list of games and makes each one interactive
 function renderSomething (data) {
-
     data.forEach((game) => {
         const li = document.createElement("li")
         li.innerHTML = `<a href="#">${game.title}</a>`
         li.className = "game"
                 li.id = game.title
-        // function sort(ul) {
-        //     let liArr = menu.children
-        //     let arr = new Array()
-        //     for (let i = 0; i < liArr.length; i++) {
-        //         arr.push(liArr[i].innerText)
-        //     }
-        //     arr.sort()
-        //     arr.forEach(function(content, index) {
-        //         liArr[index].innerHTML = `<a href="#">${content}</a>`;
-        //     })
-        // }
-        
-        // sort("list")
         li.addEventListener(`click`, (e) => {
             e.preventDefault()
             gameTitle.textContent = game.title
@@ -92,15 +80,11 @@ function renderSomething (data) {
     gameDeveloper.textContent = "Developer: "+data[randomId].developer
     releaseDate.textContent = "Release Date: "+data[randomId].release_date
 }
-
+//Opens new game webpage
 function openImageLink(event){
     window.open(event.target.dataset.url)
 }
-//Function that opens a new tab on the image
-//function openImageLink (imageLink) {
-  //  window.open(imageLink.game_url)
-//}
-
+//If you type the whole game name in and submit it, it'll load it
 searchBarForm.addEventListener("submit", (e) => {
     e.preventDefault();
     let searchRequest = document.querySelector("#mySearch").value
@@ -127,12 +111,11 @@ searchBarForm.addEventListener("submit", (e) => {
         gameImg.dataset.url = result.game_url
         
     })
-// .catch(console.log("Game not found!"))
-// e.target.reset()
+e.target.reset()
 })
 
 function myFunction() {
-    // Declare letiables
+    // Declare variables
     let input, filter, ul, li, a, i;
     input = document.getElementById("mySearch");
     filter = input.value.toUpperCase();
@@ -149,7 +132,7 @@ function myFunction() {
       }
     }
   }
-
+//Event Listner for comment section
   formReview.addEventListener('submit', handleSubmit)
 
 function handleSubmit(e) {
@@ -162,6 +145,49 @@ function handleSubmit(e) {
 
 
 }
+//Filter Functionality
+console.log(filtersList.children)
+filterbutton.addEventListener(`click`, () => {
+    filtersList.toggleAttribute("hidden")
+})
+filtersList.childNodes.forEach((filter) => {
+ filter.addEventListener(`click`, () => {
+     fetch(BASE_URL+`?category=${filter.id}`, {
+        headers: {
+            'x-rapidapi-host': 'mmo-games.p.rapidapi.com',
+            'x-rapidapi-key': apiKey
+        }
+    })
+     .then(resp => resp.json())
+     .then(genreData => {
+         console.log(genreData)
+         menu.replaceChildren();
+         genreData.forEach((game) => {
+            const li = document.createElement("li")
+            li.innerHTML = `<a href="#">${game.title}</a>`
+            li.className = "game"
+                    li.id = game.title
+            li.addEventListener(`click`, (e) => {
+                e.preventDefault()
+                gameTitle.textContent = game.title
+                gameImg.src = game.thumbnail
+                     gameImg.alt = game.title
+                     //Makes the image clickable and opens a new tab to the game page
+                     gameImg.addEventListener("click", () => openImageLink(game))
+                gameDesc.textContent = game.short_description
+                gameGenre.textContent = "Genre: "+game.genre
+                gamePlatform.textContent = "Platform: "+game.platform
+                gameDeveloper.textContent = "Developer: "+game.developer
+                releaseDate.textContent = "Release Date: "+game.release_date
+                gameImg.dataset.url = game.game_url
+            })
+            menu.append(li)
+        })
+         
+     })
+ })
+})
+
 //Just having fun
 const adTisement = document.querySelector("#addy")
 
