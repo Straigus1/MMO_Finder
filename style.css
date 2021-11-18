@@ -1,3 +1,190 @@
 body {
-    background-color: #3399ff;
+    background: rgb(61,61,61);
+    background: radial-gradient(circle, rgba(61,61,61,1) 73%, rgba(117,80,0,1) 100%);/* background-color: #191970; */
+}
+#page_name_container {
+    font-size: 20px;
+    background-color: #ffd24d;
+    margin: auto;
+    width:50%;
+    /* border: 5px solid gray; */
+    border-radius: 10px;
+    /* box-sizing: border-box; */
+    text-align: center;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-shadow: 0px 5px 20px black;
+}
+#game_info_container {
+    position: absolute;
+    display: block;
+    top:10%;
+    right: 20%;
+    width: 55%;
+    border: 5px solid gray;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #FF9912;
+    max-height: 450px;
+    margin: 10px;
+    padding: 10px;
+    opacity: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0px 5px 20px black;
+}
+#game_title {
+    font-size: 30px;
+    margin: auto;
+    font-style: italic;
+    text-align: center;
+    /* border-radius: 10px; */
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
+#game_thumbnail {
+    float: left;
+    margin-top: 10px;
+}
+#game_thumbnail:hover {
+    box-shadow: 0px 5px 20px #fff;
+    border-radius: 10px;
+}
+#game_thumbnail:active {
+    box-shadow: 0px 5px 20px black;
+}
+#game_description {
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 2px solid black;
+    padding: 8px;
+    mix-blend-mode: darken;
+    margin: auto;
+    
+}
+#game_description:before {
+    content: "Description: ";
+    color: red;
+}
+.game_break_down {
+    float: left;
+    padding-left: 8px;
+}
+#form_box {
+    position: absolute;
+    bottom: .5%;
+    right: 20%;
+    width: 55%;
+    height: 45%;
+    box-sizing: border-box;
+    /* border: 10px solid yellow; */
+    /* background-color: lightsalmon; */
+    margin: 10px;
+    padding: 10px;
+}
+#review_form {
+    position: absolute;
+    bottom: 8%;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 20px black;
+    
+}
+#review_box {
+    width: 150px;
+    
+}
+#review {
+    font-size: 16px;
+    width: 400px;
+    max-width: 300%;
+    border-radius: 7px;
+
+}
+#singleComment { 
+    background-color: #ffbf00;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    
+
+}
+#singleComment:hover {
+    box-shadow: 0px 5px 5px rgb(173, 172, 170);
+}
+#user_review {
+    list-style-type: none;
+    /* background-color: #e7dc91; */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6; /* number of lines to show */
+            line-clamp: 6; 
+    -webkit-box-orient: vertical;
+}
+/* Style the search box */
+#search_bar_form {
+    
+    width: 20%;
+    border: 3px solid gray;
+    border-radius: 10px;
+    background-color:#ff9933;
+    box-shadow: 0px 5px 20px black;
+    
+}
+#mySearch {
+    /* position: absolute;
+     */
+    border-radius: 10px;
+    width: 90%;
+    font-size: 18px;
+    padding: 11px;
+    border: 3px solid orange;
+}
+
+/* Style the navigation menu */
+#myMenu {
+    /* position: relative; */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 20; /* number of lines to show */
+    line-clamp: 20; 
+    -webkit-box-orient: vertical;
+}
+
+/* Style the navigation links */
+#myMenu li a {
+    padding: 7px;
+    text-decoration: none;
+    color: black;
+    display: block
+}
+
+#myMenu li a:hover {
+    background-color: #eee;
+}
+/* For Fun */
+#addy {
+    position: absolute;
+    left: 80%;
+    top: 1%;
+    width: 380px;
+    height: 180px;
+    box-shadow: 0px 5px 20px black;
+}
+#addy img {
+    width: 100%;
+    height: auto;
+}
+#addy:hover {
+    box-shadow: 0px 5px 20px #fff;
+    border-radius: 10px;
+}
+#addy:active {
+    box-shadow: 0px 5px 20px black;
 }

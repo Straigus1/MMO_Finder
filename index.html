@@ -4,37 +4,49 @@
     <meta charset="UTF-8">
     <title>MMO Finder</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer type="text/javascript" src="/src/script.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+    <script defer type="text/javascript" src="src/script.js"></script>
   </head>
   <body>
     <div id="page_name_container">
        <h1 id="page_name">MMO Finder</h1>
    </div>
-    <div id="search_bar_container">
-        <input type="text" placeHolder="Search Game Title..." />
-    </div> 
-    <div class="game_info_container">
+    <form id="search_bar_form">
+        <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+
+<ul id="myMenu">
+</ul>
+    </form> 
+    <div id="game_info_container">
         <h2 id="game_title" class="titles">Title of Game Here</h2>
+        <p id="game_description" class="descriptions">Game description Goes Here</p>
         <img id="game_thumbnail" class="thumbnails" src="https://image.shutterstock.com/image-vector/gamepad-icon-trendy-modern-placeholder-260nw-1656207211.jpg" alt="Game Image Goes Here"/>
         <div class="game_excerpt">
-            <p id="game_description" class="descriptions">Game description Goes Here</p>
             <div class="game_break_down">
                 <h3 id="game_genre">Genre Info Goes Here</h3>
                 <h3 id="game_platform">Platform Info Goes Here</h3>
                 <h3 id="game_developer">Developer Info Goes Here</h3>
                 <h3 id="release_date">Release Date Info Goes Here</h3>
-                <h4 id="user_rating">User Rating Here</h4>
             </div>
         </div>
-        <form id="review_form" class="review_form">
-            <input
-                id="review"
-                class="review_input"
-                type="text"
-                name="review"
-                placeholder="Share your thoughts..."/>
-            <button id="review_button" class="review_button" type="submit">Submit</button>
-        </form>
+    </div>
+    <div id="form_box">
+        <!-- <label for="form_box">Leave a comment:</label> -->
+        <ul id="user_review"></ui>
+            <div id="review_box">
+                <form id="review_form" class="review_form">
+                    <input
+                        id="review"
+                        class="review_input"
+                        type="text"
+                        name="review"
+                        placeholder="Share your thoughts..."/>
+                    <button id="review_button" class="review_button" type="submit">Submit</button>
+                </form>
+            </div>
+    </div>
+    <div id="addy">
+        <img src="https://i.pinimg.com/originals/ec/93/27/ec9327ee0987e927de61868ffca61ae7.jpg" alt="Ad Placement"/>
     </div>
   </body>
 </html>
