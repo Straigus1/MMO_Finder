@@ -61,10 +61,7 @@ body {
     margin: auto;
     
 }
-#game_description:before {
-    content: "Description: ";
-    color: red;
-}
+
 .game_break_down {
     float: left;
     margin-left: 12px;
