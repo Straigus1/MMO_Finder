@@ -67,7 +67,23 @@ body {
 }
 .game_break_down {
     float: left;
-    padding-left: 8px;
+    margin-left: 12px;
+}
+#game_genre:before {
+    content: "Genre: ";
+    color: rgb(70, 69, 69);
+}
+#game_platform:before {
+    content: "Platform: ";
+    color: rgb(70, 69, 69);
+}
+#game_developer:before {
+    content: "Developer: ";
+    color: rgb(70, 69, 69);
+}
+#release_date:before {
+    content: "Release Date: ";
+    color: rgb(70, 69, 69);
 }
 #form_box {
     position: absolute;

@@ -75,10 +75,10 @@ function renderSomething (data) {
          //{signal: abortController.signal}
          //)
     gameDesc.textContent = data[randomId].short_description
-    gameGenre.textContent = "Genre: "+data[randomId].genre
-    gamePlatform.textContent = "Platform: "+data[randomId].platform
-    gameDeveloper.textContent = "Developer: "+data[randomId].developer
-    releaseDate.textContent = "Release Date: "+data[randomId].release_date
+    gameGenre.textContent = data[randomId].genre
+    gamePlatform.textContent = data[randomId].platform
+    gameDeveloper.textContent = data[randomId].developer
+    releaseDate.textContent = data[randomId].release_date
 }
 //Opens new game webpage
 function openImageLink(event){
@@ -104,10 +104,10 @@ searchBarForm.addEventListener("submit", (e) => {
         gameImg.src = result.thumbnail
         gameImg.alt = result.title
         gameDesc.textContent = result.short_description
-        gameGenre.textContent = "Genre: "+result.genre
-        gamePlatform.textContent = "Platform: "+result.platform
-        gameDeveloper.textContent = "Developer: "+result.developer
-        releaseDate.textContent = "Release Date: "+result.release_date
+        gameGenre.textContent = result.genre
+        gamePlatform.textContent = result.platform
+        gameDeveloper.textContent = result.developer
+        releaseDate.textContent = result.release_date
         gameImg.dataset.url = result.game_url
         
     })
@@ -175,7 +175,7 @@ filtersList.childNodes.forEach((filter) => {
                      //Makes the image clickable and opens a new tab to the game page
                      gameImg.addEventListener("click", () => openImageLink(game))
                 gameDesc.textContent = game.short_description
-                gameGenre.textContent = "Genre: "+game.genre
+                gameGenre.textContent = game.genre
                 gamePlatform.textContent = "Platform: "+game.platform
                 gameDeveloper.textContent = "Developer: "+game.developer
                 releaseDate.textContent = "Release Date: "+game.release_date
