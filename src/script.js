@@ -53,10 +53,10 @@ function renderSomething (data) {
                  //Makes the image clickable and opens a new tab to the game page
                  gameImg.addEventListener("click", () => openImageLink(game))
             gameDesc.textContent = game.short_description
-            gameGenre.textContent = "Genre: "+game.genre
-            gamePlatform.textContent = "Platform: "+game.platform
-            gameDeveloper.textContent = "Developer: "+game.developer
-            releaseDate.textContent = "Release Date: "+game.release_date
+            gameGenre.textContent = game.genre
+            gamePlatform.textContent = game.platform
+            gameDeveloper.textContent = game.developer
+            releaseDate.textContent = game.release_date
             gameImg.dataset.url = game.game_url
         })
         menu.append(li)
@@ -176,9 +176,9 @@ filtersList.childNodes.forEach((filter) => {
                      gameImg.addEventListener("click", () => openImageLink(game))
                 gameDesc.textContent = game.short_description
                 gameGenre.textContent = game.genre
-                gamePlatform.textContent = "Platform: "+game.platform
-                gameDeveloper.textContent = "Developer: "+game.developer
-                releaseDate.textContent = "Release Date: "+game.release_date
+                gamePlatform.textContent = game.platform
+                gameDeveloper.textContent = game.developer
+                releaseDate.textContent = game.release_date
                 gameImg.dataset.url = game.game_url
             })
             menu.append(li)
