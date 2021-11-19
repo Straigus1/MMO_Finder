@@ -38,9 +38,8 @@ fetch(BASE_URL+'?sort-by=alphabetical', {
     (renderSomething(gamesData))
 })
 }
-//Function that makes the list of games and makes each one interactive
-function renderSomething (data) {
-    data.forEach((game) => {
+// Refactored image click/link/new tab into one function
+function imageClickableNewTab(game) {
         const li = document.createElement("li")
         li.innerHTML = `<a href="#">${game.title}</a>`
         li.className = "game"
@@ -60,6 +59,12 @@ function renderSomething (data) {
             gameImg.dataset.url = game.game_url
         })
         menu.append(li)
+
+}
+//Function that makes the list of games and makes each one interactive
+function renderSomething (data) {
+    data.forEach((game) => {
+        imageClickableNewTab(game);
     })
     //Random Number generator that randomly selects a game Id
     let randomId = Math.floor(Math.random() * (369))
@@ -165,25 +170,7 @@ filtersList.childNodes.forEach((filter) => {
          console.log(genreData)
          menu.replaceChildren();
          genreData.forEach((game) => {
-            const li = document.createElement("li")
-            li.innerHTML = `<a href="#">${game.title}</a>`
-            li.className = "game"
-                    li.id = game.title
-            li.addEventListener(`click`, (e) => {
-                e.preventDefault()
-                gameTitle.textContent = game.title
-                gameImg.src = game.thumbnail
-                     gameImg.alt = game.title
-                     //Makes the image clickable and opens a new tab to the game page
-                     gameImg.addEventListener("click", () => openImageLink(game))
-                gameDesc.textContent = game.short_description
-                gameGenre.textContent = game.genre
-                gamePlatform.textContent = game.platform
-                gameDeveloper.textContent = game.developer
-                releaseDate.textContent = game.release_date
-                gameImg.dataset.url = game.game_url
-            })
-            menu.append(li)
+            imageClickableNewTab(game);
         })
          
      })
@@ -200,25 +187,7 @@ filterReset.addEventListener("click", () => {
     .then(resp => resp.json())
     .then(data => {
         data.forEach((game) => {
-            const li = document.createElement("li")
-            li.innerHTML = `<a href="#">${game.title}</a>`
-            li.className = "game"
-                    li.id = game.title
-            li.addEventListener(`click`, (e) => {
-                e.preventDefault()
-                gameTitle.textContent = game.title
-                gameImg.src = game.thumbnail
-                     gameImg.alt = game.title
-                     //Makes the image clickable and opens a new tab to the game page
-                     gameImg.addEventListener("click", () => openImageLink(game))
-                gameDesc.textContent = game.short_description
-                gameGenre.textContent = game.genre
-                gamePlatform.textContent = game.platform
-                gameDeveloper.textContent = game.developer
-                releaseDate.textContent = game.release_date
-                gameImg.dataset.url = game.game_url
-            })
-            menu.append(li)
+            imageClickableNewTab(game);
         })
     })
 }

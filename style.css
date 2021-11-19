@@ -325,6 +325,7 @@ body {
 #review_form {
     position: absolute;
     bottom: 8%;
+    left: 22%;
     box-sizing: border-box;
     box-shadow: 0px 5px 20px black;
     
