@@ -210,6 +210,6 @@ donateUs.addEventListener('click', () => {
 )
 const flatironSchool = document.querySelector('#school')
 
-flatironSchool.addEventListener('click', () => {
+flatironSchool.addEventListener("click", () => {
     window.open('https://flatironschool.com/')
 })
