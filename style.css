@@ -1,6 +1,6 @@
 body {
     background: rgb(61,61,61);
-    background: radial-gradient(circle, rgba(61,61,61,1) 73%, rgba(117,80,0,1) 100%);/* background-color: #191970; */
+    background: radial-gradient(circle, rgba(61,61,61,1) 73%, rgba(117,80,0,1) 100%);
 }
 #page_name_container {
     font-size: 20px;
@@ -19,7 +19,7 @@ body {
     position: absolute;
     display: block;
     top:10%;
-    right: 20%;
+    right: 22%;
     width: 55%;
     border: 5px solid gray;
     border-radius: 10px;
@@ -38,6 +38,7 @@ body {
     margin: auto;
     font-style: italic;
     text-align: center;
+    text-shadow: 0px 2px 3px black;
     /* border-radius: 10px; */
     border-bottom: 2px solid black;
     padding-bottom: 5px;
@@ -47,6 +48,7 @@ body {
     margin-top: 10px;
     border: 2px solid gray;
     border-radius: 10px;
+    cursor: pointer;
 }
 #game_thumbnail:hover {
     box-shadow: 0px 5px 20px #fff;
@@ -56,6 +58,7 @@ body {
 }
 #game_description {
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
     border-bottom: 2px solid black;
     padding: 8px;
     mix-blend-mode: darken;
@@ -65,7 +68,7 @@ body {
 
 .game_break_down {
     float: left;
-    margin-left: 12px;
+    margin: 12px;
 }
 #game_genre:before {
     content: "Genre: ";
@@ -83,10 +86,234 @@ body {
     content: "Release Date: ";
     color: rgb(70, 69, 69);
 }
+.filterSection {
+    overflow: hidden;
+}
+#filters {
+    position: absolute;
+    top: 1%;
+    left: 6%;
+    font-size: 18px;
+    text-align: center;
+    width: 9%;
+    color: rgb(255, 94, 0);
+    border-radius: 10px;
+    background-color: #ffd24d;
+    box-shadow: 0px 3px 10px black;
+   
+}
+#filters:hover {
+    box-shadow: 0px 0px 12px yellow;
+}
+.filtersList {
+    list-style: none;
+    color: rgb(31, 30, 30);
+    font-size: 18px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    
+}
+/* Must find a way to make this DRY */
+#Card {
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    width: 5%;
+    border-radius: 10px;
+    background-color: #cc6600;
+    box-shadow: 0px 1px 5px black;
+    max-height: 50px;
+    overflow: hidden;
+    
+}
+#Card:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#Card:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#Fighting {
+    position: absolute;
+    top: 5%;
+    left: 8%;
+    width: 5%;
+    border-radius: 10px;
+    background-color: #cc6600;
+    box-shadow: 0px 1px 5px black;
+    overflow: hidden;
+}
+#Fighting:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#Fighting:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#MMO {
+    position: absolute;
+    top: 5%;
+    left: 14%;
+    width: 5%;
+    border-radius: 10px;
+    background-color: #cc6600;
+    box-shadow: 0px 1px 5px black;
+    overflow: hidden;
+}
+#MMO:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#MMO:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#MMORPG {
+    position: absolute;
+    top: 9%;
+    left: 2%;
+    width: 5%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cc6600;
+    box-shadow: 0px 1px 5px black;
+}
+#MMORPG:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#MMORPG:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#MMOFPS {
+    position: absolute;
+    top: 9%;
+    left: 8%;
+    width: 5%;
+    border-radius: 10px;
+    background-color: #cc6600;
+    overflow: hidden;
+    box-shadow: 0px 1px 5px black;
+}
+#MMOFPS:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#MMOFPS:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#MOBA {
+    position: absolute;
+    top: 9%;
+    left: 14%;
+    width: 5%;
+    border-radius: 10px;
+    background-color: #cc6600;
+    overflow: hidden;
+    box-shadow: 0px 1px 5px black;
+}
+#MOBA:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#MOBA:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#PVP {
+    position: absolute;
+    top: 13%;
+    left: 2%;
+    width: 5%;
+    border-radius: 10px;
+    background-color: #cc6600;
+    overflow: hidden;
+    box-shadow: 0px 1px 5px black;
+}
+#PVP:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#PVP:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#Shooter {
+    position: absolute;
+    top: 13%;
+    left: 8%;
+    width: 5%;
+    border-radius: 10px;
+    background-color: #cc6600;
+    overflow: hidden;
+    box-shadow: 0px 1px 5px black;
+}
+#Shooter:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#Shooter:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#Social {
+    position: absolute;
+    top: 13%;
+    left: 14%;
+    width: 5%;
+    border-radius: 10px;
+    background-color: #cc6600;
+    overflow: hidden;
+    box-shadow: 0px 1px 5px black;
+}
+#Social:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#Social:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#Sports {
+    position: absolute;
+    top: 17%;
+    left: 2%;
+    width: 5%;
+    border-radius: 10px;
+    background-color: #cc6600;
+    overflow: hidden;
+    box-shadow: 0px 1px 5px black;
+}
+#Sports:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#Sports:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#Strategy {
+    position: absolute;
+    top: 17%;
+    left: 8%;
+    width: 5%;
+    border-radius: 10px;
+    background-color: #cc6600;
+    overflow: hidden;
+    box-shadow: 0px 1px 5px black;
+}
+#Strategy:hover {
+    box-shadow: 0px 0px 6px tomato;
+}
+#Strategy:active {
+    box-shadow: 0px 0px 6px yellow;
+}
+#reset {
+    position: absolute;
+    top: 17%;
+    left: 14%;
+    width: 5%;
+    color: white;
+    border-radius: 10px;
+    background-color: gray;
+    overflow: hidden;
+    box-shadow: 0px 1px 5px black;
+}
+#reset:hover {
+    box-shadow: 0px 0px 12px violet;
+}
+#reset:active {
+    box-shadow: 0px 0px 12px red;
+}
 #form_box {
     position: absolute;
     bottom: .5%;
-    right: 20%;
+    right: 22%;
     width: 55%;
     height: 45%;
     box-sizing: border-box;
@@ -139,7 +366,9 @@ body {
 }
 /* Style the search box */
 #search_bar_form {
-    
+    position: absolute;
+    top: 22%;
+    left: 1%;
     width: 20%;
     border: 3px solid gray;
     border-radius: 10px;
@@ -166,8 +395,8 @@ body {
     overflow: auto;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 20; /* number of lines to show */
-    line-clamp: 20; 
+    -webkit-line-clamp: 19; /* number of lines to show */
+    line-clamp: 19; 
     -webkit-box-orient: vertical;
 }
 
@@ -186,19 +415,40 @@ body {
 #addy {
     position: absolute;
     left: 80%;
-    top: 1%;
+    top: 9%;
     width: 380px;
     height: 180px;
     box-shadow: 0px 5px 20px black;
+    border-radius: 10px;
 }
 #addy img {
     width: 100%;
     height: auto;
+    cursor: pointer;
 }
-#addy:hover {
-    box-shadow: 0px 5px 20px #fff;
-    border-radius: 10px;
-}
-#addy:active {
+#donate {
+    position: absolute;
+    left: 80%;
+    top: 36%;
+    width: 380px;
+    height: 180px;
     box-shadow: 0px 5px 20px black;
+}
+#donate img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+#school {
+    position: absolute;
+    left: 80%;
+    top: 66%;
+    width: 380px;
+    height: 180px;
+    box-shadow: 0px 5px 20px black;
+}
+#school img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
 }
