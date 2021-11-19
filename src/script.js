@@ -151,11 +151,6 @@ function handleSubmit(e) {
 
 }
 //Filter Functionality
-// console.log(filtersList.children)
-filterbutton.addEventListener(`click`, () => {
-    filtersList.toggleAttribute("hidden")
-    filterReset.toggleAttribute("hidden")
-})
     //All Filters Button functionality
 filtersList.childNodes.forEach((filter) => {
  filter.addEventListener(`click`, () => {
