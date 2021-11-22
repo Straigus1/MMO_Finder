@@ -1,25 +1,30 @@
 const BASE_URL = "https://mmo-games.p.rapidapi.com/games"
 const apiKey = config.api_key
 
-const gameTitle = document.getElementById("game_title")
-const gameImg = document.querySelector("#game_thumbnail")
-const gameDesc = document.querySelector("#game_description")
-const gameGenre = document.querySelector("#game_genre")
-const gamePlatform = document.querySelector("#game_platform")
-const gameDeveloper = document.querySelector("#game_developer")
-const releaseDate = document.querySelector("#release_date")
-const userReview = document.querySelector("#user_review")
-const formReview = document.querySelector("#review_form")
-const inputReview = document.querySelector("#review")
+// Function for querySelector
+function qs(query) {
+    return document.querySelector(query)
+}
+const gameTitle = qs("#game_title")
+const gameImg = qs("#game_thumbnail")
+const gameDesc = qs("#game_description")
+const gameGenre = qs("#game_genre")
+const gamePlatform = qs("#game_platform")
+const gameDeveloper = qs("#game_developer")
+const releaseDate = qs("#release_date")
+const userReview = qs("#user_review")
+const formReview = qs("#review_form")
+const inputReview = qs("#review")
 
 
-const searchBar = document.querySelector("#searchBar")
-const searchBarForm = document.querySelector("#search_bar_form")
-const menu = document.querySelector("#myMenu")
+const searchBar = qs("#searchBar")
+const searchBarForm = qs("#search_bar_form")
+const menu = qs("#myMenu")
 
-const filterbutton = document.querySelector("#filters")
-const filtersList = document.querySelector(".filtersList")
-const filterReset = document.querySelector("#reset")
+const filterbutton = qs("#filters")
+const filtersList = qs(".filtersList")
+const filterReset = qs("#reset")
+
 
 document.addEventListener("DOMContentLoaded", fetchData)
 
@@ -92,7 +97,7 @@ function openImageLink(event){
 //If you type the whole game name in and submit it, it'll load it
 searchBarForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    let searchRequest = document.querySelector("#mySearch").value
+    let searchRequest = qs("#mySearch").value
     fetch(BASE_URL, {
         headers: {
             'x-rapidapi-host': 'mmo-games.p.rapidapi.com',
@@ -194,21 +199,19 @@ filterReset.addEventListener("click", () => {
 )
 
 //Just having fun
-const adTisement = document.querySelector("#addy")
+const adTisement = qs("#addy")
 
-adTisement.addEventListener('click', goToSource)
-
-function goToSource (e) {
+adTisement.addEventListener('click', () => {
     window.open('https://www.snickers.com/')
 }
-
-const donateUs = document.querySelector('#donate')
+)
+const donateUs = qs('#donate')
 
 donateUs.addEventListener('click', () => {
     window.open('https://make-some-noise.com/support-us/')
 }
 )
-const flatironSchool = document.querySelector('#school')
+const flatironSchool = qs('#school')
 
 flatironSchool.addEventListener('click', () => {
     window.open('https://flatironschool.com/')

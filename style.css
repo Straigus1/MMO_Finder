@@ -326,8 +326,8 @@ body {
     position: absolute;
     bottom: 8%;
     left: 23%;
-    box-sizing: border-box;
-    box-shadow: 0px 5px 20px black;
+    /* box-sizing: border-box; */
+    /* box-shadow: 0px 5px 20px black; */
     
 }
 #review_box {
@@ -339,8 +339,10 @@ body {
     width: 400px;
     max-width: 300%;
     border-radius: 7px;
+    box-shadow: 0px 5px 20px black;
 
 }
+
 #singleComment { 
     background-color: #ffbf00;
     border-radius: 10px;
@@ -364,6 +366,14 @@ body {
     -webkit-line-clamp: 6; /* number of lines to show */
             line-clamp: 6; 
     -webkit-box-orient: vertical;
+}
+#review_button.review_button {
+    font-family:Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px black;
+}
+#review_button.review_button:hover {
+    box-shadow: 0px 0px 7px yellow
 }
 /* Style the search box */
 #search_bar_form {
@@ -419,7 +429,7 @@ body {
     top: 9%;
     width: 380px;
     height: 180px;
-    box-shadow: 0px 5px 20px black;
+    box-shadow: 0px 0px 20px black;
     border-radius: 10px;
 }
 #addy img {
@@ -433,7 +443,7 @@ body {
     top: 36%;
     width: 380px;
     height: 180px;
-    box-shadow: 0px 5px 20px black;
+    box-shadow: 0px 0px 20px black;
 }
 #donate img {
     width: 100%;
@@ -446,7 +456,7 @@ body {
     top: 66%;
     width: 380px;
     height: 180px;
-    box-shadow: 0px 5px 20px black;
+    box-shadow: 0px 0px 20px black;
 }
 #school img {
     width: 100%;
